@@ -1,0 +1,62 @@
+.navbar{
+   position: fixed;
+   outline: 1px solid red;
+  //  border-bottom: 3px solid black;
+   box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
+   -webkit-box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
+   -moz-box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
+  .toggler-brand{
+    button{
+      border: none;
+    }
+
+    .navbar-brand{
+
+    }
+
+    a{
+      font-weight: 600;
+      font-size: 1.8rem;
+      span{
+        font-weight: 600;
+        text-transform: uppercase;
+        color:olive;
+        font-size: 1.4rem !important;
+      }
+    }
+  }
+
+  .auth-search{
+    // width: 60%;
+    .search-form{
+        position: relative;
+      &__input{
+        position: relative;
+        text-align: left;
+        // padding: 10px;
+      }
+
+      &__icon{
+        position: absolute;
+        right: 0;
+        top: 2px;
+        min-width: 24px;
+        height: 24px;
+        color:grey;
+      }
+    }
+
+    .signin{
+      text-transform: uppercase;
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      // outline: 1px solid red;
+      color: olive;
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+
+
+}
