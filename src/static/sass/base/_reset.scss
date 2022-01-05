@@ -1,0 +1,16 @@
+html{
+  box-sizing: border-box;
+}
+
+body{
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.App{
+  min-height: 100vh;
+
+  &__column-row{
+    // min-height: 100vh;
+  }
+}

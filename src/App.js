@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import UserBody from './Views/user';
+import Header from './Components/header/Header';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <main className="container-fluid border border-danger App">
+    <section className="row border border-warning justify-content-center App__column-row">
+      <div className="col-md-4 border border-danger gx-0">
+        <Header />
+        <UserBody />
+      </div>
+    </section>
+  </main>
+);
 
 export default App;
