@@ -39,7 +39,7 @@
 
 
 .skill-data{
-
+    
   &__heading{
     // color: red;
     font-size: 1.1rem;
@@ -55,6 +55,15 @@
         outline: 1px solid red;
       }
     }
+
+   &--content{
+      span{
+        border: 1px solid red;
+        display: inline-block;
+        border-radius: 15px;
+        margin-bottom: 1rem;
+      }
+   }
   }
 
   &__proficiency{
@@ -62,6 +71,21 @@
      &--wrapper:nth-child(1){
       font-size: 1.8rem;
     }
+
+     &--content{
+       outline: 1px solid red;
+      span{
+        border: 1px solid red;
+        display: inline-block;
+        border-radius: 15px;
+        margin-bottom: 1rem;
+      }
+
+      span:nth-child(1),
+      span:nth-child(2){
+        margin-top: 1rem;
+      }
+   }
   }
 }
 

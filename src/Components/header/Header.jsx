@@ -1,9 +1,20 @@
+/* eslint-disable max-len */
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { IoSearchSharp } from 'react-icons/io5';
 
 const Header = () => {
   const placeholder = 1;
+  const [term, setTerm] = useState('');
+  const dispatch = useDispatch();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    // console.log(term);
+    dispatch(fetchAsyncUsers(term));
+  };
   return (
     <nav className="navbar navbar-light">
       <div className="toggler-brand d-flex">
@@ -17,9 +28,12 @@ const Header = () => {
       </div>
 
       <div className="auth-search d-flex me-3">
-        <div className="search-form d-flex flex-grow-1">
-          <IoSearchSharp className="search-form__icon me-3" />
-        </div>
+        <form className="search-form d-flex flex-grow-1" onSubmit={submitHandler}>
+          {/* <input type='text' value={} placeholder='search' onChange={(e)=> setTerm(e.target.value)}/> */}
+          <button type="submit">
+            <IoSearchSharp className="search-form__icon me-3" />
+          </button>
+        </form>
         <a className="signin" href="./">
           sign in
         </a>

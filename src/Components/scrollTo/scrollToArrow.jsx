@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BiChevronDownCircle } from 'react-icons/bi';
+import { HiChevronDown } from 'react-icons/hi';
 
 const ScrollArrow = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -22,7 +22,7 @@ const ScrollArrow = () => {
   }, []);
 
   return (
-    <BiChevronDownCircle
+    <HiChevronDown
       className="scrollTop"
       onClick={scrollTop}
       style={{ height: 50, width: 50, display: showScroll ? 'flex' : 'none' }}
