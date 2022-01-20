@@ -1,48 +1,129 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable import/prefer-default-export */
-import {
-  createSlice,
-  createAsyncThunk,
-} from '@reduxjs/toolkit';
+/* eslint-disable no-unused-vars */
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+// import axios from 'axios';
+// eslint-disable-next-line import/prefer-default-export
+// export const getUsers = createAsyncThunk(
+//   'users/getUsers',
+//   async (dispatch, getState, searchtext) => fetch('https://jsonplaceholder.typicode.com/users').then(
+//     (res) => res.json(),
+//   ),
+// );
 
-import userApi from '../../../common/apis/userApi';
-
-export const fetchAsyncUsers = createAsyncThunk(
-  'users/fetchAsyncUsers',
+export const getUsers = createAsyncThunk(
+  'users/getUsers',
 
   async (username) => {
-    // const username = 'Oretade';
-    const response = await userApi.get(`https://torre.bio/api/bios/${username}`);
-    return response.data;
+    const response = await fetch(
+      `https://localhost:3001/api/v1/person/${username}`,
+    );
+    const person = await response.json();
+    return person;
   },
 );
 
-const initialState = {
-  users: {},
-};
+// export const getUsers = createAsyncThunk(
+// 'users/getUsers',
+// async (dispatch, getState, searchtext) => fetch(`https://torre.bio/api/bios/${searchtext}`, { mode: 'no-cors' }).then((res) => res.json()),
+
+// async (searchText) => {
+//   const response = await fetch(`https://torre.bio/api/bios/${searchText}`);
+// axios
+//   .get('https://torre.bio/api/bios/john')
+//   .then((data) => {
+//     console.log(data.data);
+//     return data.data;
+//   })
+//   .catch((e) => {
+//     console.log('space upload error', e);
+//     return e;
+//   });
+
+// const res = await axios.get('https://torre.bio/api/bios/john');
+// const { data } = await res;
+// return data;
+
+// await axios
+//   .get('https://torre.bio/api/bios/john', {
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   })
+//   .then((data) => {
+//     console.log('======success=======');
+//     console.log(data);
+//     return data.data;
+//   })
+//   .catch((err) => {
+//     console.log('======error=======');
+//     console.log(err);
+//     return err;
+//   });
+// },
+// );
+
+export const getOpportunities = createAsyncThunk(
+  'opportunities/getOpportunities',
+
+  async (id) => {
+    const response = await fetch(
+      // `https://torre.co/api/suite/opportunities/${id}`,
+      {
+        mode: 'no-cors',
+      },
+    );
+    const opportunities = await response.json();
+    return opportunities;
+  },
+);
 
 const userSlice = createSlice({
-  name: 'users',
-  initialState,
-  reducers: {
-    removeSelectedUser: (state) => {
-      state.selectUser = {};
-    },
+  name: 'user',
+  initialState: {
+    users: {},
+    status: null,
   },
+
   extraReducers: {
-    [fetchAsyncUsers.pending]: () => {
-      console.log('Pending');
+    [getUsers.pending]: (state, action) => {
+      console.log('loading');
+      return { ...state, status: 'loading' };
     },
-    [fetchAsyncUsers.fulfilled]: (state, { payload }) => {
-      console.log('Fetched Successfully!');
-      return { ...state, users: payload };
+    [getUsers.success]: (state, action) => {
+      console.log('success');
+      return { ...state, status: 'success', state: action.payload };
     },
-    [fetchAsyncUsers.rejected]: () => {
-      console.log('Rejected!');
+    [getUsers.rejected]: (state, action) => {
+      console.log('failed');
+      return { ...state, status: 'failed' };
+    },
+    [getOpportunities.success]: (state, action) => {
+      console.log('success');
+      return { ...state, status: 'success', state: action.payload };
     },
   },
 });
 
-export const getAllUsers = (state) => state.users.users;
+// const opportunitySlice = createSlice({
+//   name: "user",
+//   initialState: {
+//     users: {},
+//     status: null,
+//   },
 
-export default userSlice;
+//   extraReducers: {
+//     [getUsers.pending]: (state, action) => {
+//       console.log("loading");
+//       return { ...state, status: "loading" };
+//     },
+//     [getUsers.success]: (state, action) => {
+//       console.log("success");
+//       return { ...state, status: "success", state: action.payload };
+//     },
+//     [getUsers.rejected]: (state, action) => {
+//       console.log("failed");
+//       return { ...state, status: "failed" };
+//     },
+//   },
+// });
+
+export default userSlice.reducer;

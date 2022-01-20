@@ -1,19 +1,29 @@
 /* eslint-disable react/style-prop-object */
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { MdDirectionsRun } from 'react-icons/md';
 import { BiCycling } from 'react-icons/bi';
-import { fetchAsyncUsers } from '../redux/features/users/usersSlice';
+import { getUsers } from '../redux/features/users/usersSlice';
 import Portrait from '../static/assets/img/christopher-campbell.jpg';
 
 const User = () => {
-  const userProfile = 1;
   const dispatch = useDispatch();
-  const usertext = 'Oretade';
+  const { user } = useSelector((state) => state.user.users);
+  const userText = 'john';
+  console.log(user);
+
+  // useEffect(() => {
+  //   dispatch(getUsers());
+  // }, [dispatch]);
+  const one = 1;
+  // const users = useSelector(getUsers);
+  // console.log(users);
+  // const usertext = 'john';
   useEffect(() => {
-    dispatch(fetchAsyncUsers(usertext));
+    dispatch(getUsers(userText));
   }, [dispatch]);
+
   return (
     <aside className="border border-primary">
       <div className="avatar-details mt-5 mb-5 border border-primary">
@@ -52,5 +62,4 @@ const User = () => {
     </aside>
   );
 };
-
 export default User;

@@ -12,8 +12,11 @@ const Header = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
     // console.log(term);
-    dispatch(fetchAsyncUsers(term));
+    dispatch(getUsers(term));
+    setTerm('');
+    // if (term === '') return alert('please supply a name');
   };
   return (
     <nav className="navbar navbar-light">

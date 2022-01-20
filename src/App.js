@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import './App.scss';
+// /* eslint-disable no-unused-vars */
+// import './App.scss';
 import React, { useRef, useState, useEffect } from 'react';
 import UserBody from './Views/user';
 import Scroll from './Components/scrollTo/scrollToArrow';
@@ -25,7 +26,7 @@ const App = () => {
         setShowButton(false);
       }
     });
-    // winddow.removeEventListener();
+    // window.removeEventListener();
   }, []);
 
   return (
