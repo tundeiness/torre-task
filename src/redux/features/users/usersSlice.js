@@ -13,10 +13,11 @@ export const getUsers = createAsyncThunk(
   'users/getUsers',
 
   async (username) => {
-    const response = await fetch(
-      `https://localhost:3001/api/v1/person/${username}`,
-    );
+    const response = await fetch(`http://localhost:3001/api/v1/persons/${username}`, {
+      mode: 'no-cors',
+    });
     const person = await response.json();
+    console.log(response);
     return person;
   },
 );
@@ -85,15 +86,15 @@ const userSlice = createSlice({
 
   extraReducers: {
     [getUsers.pending]: (state, action) => {
-      console.log('loading');
+      console.log('======loading=======');
       return { ...state, status: 'loading' };
     },
     [getUsers.success]: (state, action) => {
-      console.log('success');
+      console.log('======success=======');
       return { ...state, status: 'success', state: action.payload };
     },
     [getUsers.rejected]: (state, action) => {
-      console.log('failed');
+      console.log('======error=======');
       return { ...state, status: 'failed' };
     },
     [getOpportunities.success]: (state, action) => {

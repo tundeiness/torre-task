@@ -1,30 +1,49 @@
 /* eslint-disable react/style-prop-object */
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdDirectionsRun } from 'react-icons/md';
 import { BiCycling } from 'react-icons/bi';
-import { getUsers } from '../redux/features/users/usersSlice';
+import { fetchPer } from '../redux/action';
+import { getPerson } from '../redux/selectors';
+// import { fetchPersons } from '../api/index';
 import Portrait from '../static/assets/img/christopher-campbell.jpg';
 
 const User = () => {
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.user.users);
-  const userText = 'john';
-  console.log(user);
+  const singlePerson = useSelector(getPerson);
+  // const user = useSelector((state) => state.data);
+  // const userText = 'alexander';
+  // console.log(user);
+  const [person, setPerson] = useState({});
+  const [args, setArgs] = useState('');
+
+  useEffect(() => dispatch(fetchPer()), [dispatch]);
+  console.log(singlePerson);
+
+  // setArgs(singlePerson);
+  // console.log(args);
 
   // useEffect(() => {
-  //   dispatch(getUsers());
-  // }, [dispatch]);
+  //   fetchPersons('torrenegra').then((res) => {
+  //     setPerson(res.data);
+  //   });
+  // }, [fetchPersons]);
   const one = 1;
   // const users = useSelector(getUsers);
   // console.log(users);
   // const usertext = 'john';
-  useEffect(() => {
-    dispatch(getUsers(userText));
-  }, [dispatch]);
+  // useEffect(() => {
+  //   const res = fetch(`http://localhost:3001/api/v1/persons/${userText}`);
+  // dispatch(getUsers(userText));
+  // console.log(getUsers(userText));
+  //   console.log(res);
+  // }, [dispatch]);
+
+  // console.log(person);
 
   return (
+
     <aside className="border border-primary">
       <div className="avatar-details mt-5 mb-5 border border-primary">
         <div className="avatar">
@@ -60,6 +79,7 @@ const User = () => {
         </div>
       </div>
     </aside>
+
   );
 };
 export default User;
