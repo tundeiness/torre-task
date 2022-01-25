@@ -4,22 +4,26 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdDirectionsRun } from 'react-icons/md';
 import { BiCycling } from 'react-icons/bi';
-import { fetchPer } from '../redux/action';
-import { getPerson } from '../redux/selectors';
+import userApi from '../common/apis/userApi';
+// import { fetchPerson } from '../containers/redux/actions/person';
+// import { fetchPer } from '../containers/redux/action';
+// import { getPerson } from '../containers/redux/selectors';
 // import { fetchPersons } from '../api/index';
+
+import { getPerson } from '../features/person/personSlice';
 import Portrait from '../static/assets/img/christopher-campbell.jpg';
 
 const User = () => {
   const dispatch = useDispatch();
-  const singlePerson = useSelector(getPerson);
+  // const singlePerson = useSelector(getPerson);
   // const user = useSelector((state) => state.data);
   // const userText = 'alexander';
   // console.log(user);
   const [person, setPerson] = useState({});
-  const [args, setArgs] = useState('');
+  // const [args, setArgs] = useState('');
 
-  useEffect(() => dispatch(fetchPer()), [dispatch]);
-  console.log(singlePerson);
+  // useEffect(() => dispatch(fetchPer()), [dispatch]);
+  // console.log(singlePerson);
 
   // setArgs(singlePerson);
   // console.log(args);
@@ -41,6 +45,22 @@ const User = () => {
   // }, [dispatch]);
 
   // console.log(person);
+  const perText = 'john';
+
+  useEffect(() => {
+    const fetchPerson = async () => {
+      const res = await userApi.get(`${perText}`)
+      // dispatch(getPerson(res.data));
+      // console.log(res.data);
+        .catch((err) => {
+          console.log('Err :', err);
+        });
+
+      console.log(res.data);
+      dispatch(getPerson(res.data));
+    };
+    fetchPerson();
+  }, []);
 
   return (
 
