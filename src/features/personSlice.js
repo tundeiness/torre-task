@@ -4,10 +4,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const fetchPerson = createAsyncThunk('person/loadPerson', async (username) => {
+export const fetchPerson = createAsyncThunk('person/loadPerson', async (term) => {
   const res = await axios.get(
-    'http://localhost:3001/api/v1/persons/alexander',
-  );
+    `http://localhost:3001/api/v1/persons/${term}`,
+  ).catch((err) => {
+    console.log('Err :', err);
+  });
 
   return res.data;
 });
@@ -63,6 +65,6 @@ export const personSlice = createSlice({
   },
 });
 
-export const selectPerson = (state) => state.person.person;
-export const { getPersonPending, getPersonSuccess, getPersonError } = personSlice.actions;
+export const loadPerson = (state) => state.person.personInfo;
+// export const { getPersonPending, getPersonSuccess, getPersonError } = personSlice.actions;
 export default personSlice.reducer;

@@ -4,21 +4,20 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdDirectionsRun } from 'react-icons/md';
 import { BiCycling } from 'react-icons/bi';
-import { fetchPerson } from '../features/personSlice';
-import { getPersonRecord } from '../features/apiCall';
+import { loadPerson } from '../features/personSlice';
 
 import Portrait from '../static/assets/img/christopher-campbell.jpg';
 
 const User = () => {
   // const { person, pending, error } = useSelector((state) => state.person);
-  const { personInfo, pending, error } = useSelector((state) => state.person);
-  const dispatch = useDispatch();
+  // const { personInfo, pending, error } = useSelector((state) => state.person);
+  // const dispatch = useDispatch();
+  const singlePersonRecord = useSelector(loadPerson);
+  // useEffect(() => {
+  //   dispatch(fetchPerson());
+  // }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(fetchPerson());
-  }, [dispatch]);
-
-  console.log(personInfo);
+  console.log(singlePersonRecord);
 
   const one = 1;
   return (

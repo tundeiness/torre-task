@@ -1,23 +1,23 @@
+/* eslint-disable consistent-return */
 /* eslint-disable max-len */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { IoSearchSharp } from 'react-icons/io5';
+import { fetchPerson } from '../../features/personSlice';
 
 const Header = () => {
-  const placeholder = 1;
-  const [term, setTerm] = useState('');
+  const [username, setUsername] = useState('');
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    // console.log(term);
-    dispatch(getUsers(term));
-    setTerm('');
-    // if (term === '') return alert('please supply a name');
+    if (username === '') return alert('please supply a name');
+    dispatch(fetchPerson(username));
+    setUsername('');
   };
+
   return (
     <nav className="navbar navbar-light">
       <div className="toggler-brand d-flex">
@@ -31,8 +31,16 @@ const Header = () => {
       </div>
 
       <div className="auth-search d-flex me-3">
-        <form className="search-form d-flex flex-grow-1" onSubmit={submitHandler}>
-          {/* <input type='text' value={} placeholder='search' onChange={(e)=> setTerm(e.target.value)}/> */}
+        <form
+          className="search-form d-flex flex-grow-1"
+          onSubmit={submitHandler}
+        >
+          <input
+            type="text"
+            value={username}
+            placeholder="search"
+            onChange={(e) => setUsername(e.target.value)}
+          />
           <button type="submit">
             <IoSearchSharp className="search-form__icon me-3" />
           </button>
