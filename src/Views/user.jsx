@@ -13,9 +13,6 @@ const User = () => {
   // const { personInfo, pending, error } = useSelector((state) => state.person);
   // const dispatch = useDispatch();
   const singlePersonRecord = useSelector(loadPerson);
-  // useEffect(() => {
-  //   dispatch(fetchPerson());
-  // }, [dispatch]);
 
   console.log(singlePersonRecord);
 
