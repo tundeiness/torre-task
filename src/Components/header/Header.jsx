@@ -13,7 +13,7 @@ const Header = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (username === '') return alert('please supply a name');
+    if (!username) return;
     dispatch(fetchPerson(username));
     setUsername('');
   };
@@ -41,7 +41,7 @@ const Header = () => {
             placeholder="search"
             onChange={(e) => setUsername(e.target.value)}
           />
-          <button type="submit">
+          <button type="submit" onClick={submitHandler}>
             <IoSearchSharp className="search-form__icon me-3" />
           </button>
         </form>

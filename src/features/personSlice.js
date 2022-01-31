@@ -23,42 +23,34 @@ export const personSlice = createSlice({
   },
   reducers: {
     getPersonPending: (state) => {
-      // state.pending = true;
-      const { pending = true } = state;
-      return { pending };
+      state.pending = true;
     },
+    // getPersonSuccess: (state, action) => {
+    //   const { personInfo = action.payload, pending = false } = state;
+    //   return {
+    //     ...state,
+    //     personInfo,
+    //     pending,
+    //   };
+    // },
     getPersonSuccess: (state, action) => {
-      const { personInfo = action.payload, pending = false } = state;
-      // const { data } = action.payload;
-      return {
-        ...state,
-        personInfo,
-        pending,
-      };
+      state.pending = false;
+      state.personInfo = action.payload;
     },
     getPersonError: (state) => {
-      const { pending = true, error = true } = state;
-      return { pending, error };
+      state.error = state;
     },
   },
   extraReducers: {
     [fetchPerson.pending]: (state) => {
-      // const { pending = true, error = false } = state;
-      // return { pending, error };
       state.pending = true;
       state.error = false;
     },
     [fetchPerson.fulfilled]: (state, action) => {
-      // const { data } = action.payload;
-      // const { pending = false } = state;
-      // return { pending, data };
-
       state.pending = false;
       state.personInfo = action.payload;
     },
     [fetchPerson.rejected]: (state) => {
-      // const { pending = null, error = true } = state;
-      // return { pending, error };
       state.pending = null;
       state.error = true;
     },
