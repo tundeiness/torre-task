@@ -34,7 +34,7 @@ const App = () => {
 
     <main className="container-fluid border border-danger App">
       <section className="row border border-warning justify-content-center App__column-row">
-        <div className="col-md-4 border border-danger gx-0 App__column-row--wrapper">
+        <div className="col-12 col-sm-12 col-md-12 col-lg-12 border border-danger gx-0 App__column-row--wrapper">
           <Header />
           <UserBody />
           <Scroll />

@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { IoSearchSharp } from 'react-icons/io5';
 import { fetchPerson } from '../../features/personSlice';
