@@ -25,14 +25,6 @@ export const personSlice = createSlice({
     getPersonPending: (state) => {
       state.pending = true;
     },
-    // getPersonSuccess: (state, action) => {
-    //   const { personInfo = action.payload, pending = false } = state;
-    //   return {
-    //     ...state,
-    //     personInfo,
-    //     pending,
-    //   };
-    // },
     getPersonSuccess: (state, action) => {
       state.pending = false;
       state.personInfo = action.payload;

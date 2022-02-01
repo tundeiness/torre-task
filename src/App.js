@@ -28,7 +28,7 @@ const App = () => {
       }
     });
     // window.removeEventListener();
-  }, []);
+  }, [showButton]);
 
   return (
 
