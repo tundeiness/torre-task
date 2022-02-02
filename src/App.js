@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 // /* eslint-disable no-unused-vars */
 // import './App.scss';
@@ -31,14 +32,15 @@ const App = () => {
   }, [showButton]);
 
   return (
-
-    <main className="container-fluid border border-danger App">
-      <section className="row border border-warning justify-content-center App__column-row">
-        <div className="col-12 col-sm-12 col-md-12 col-lg-12 border border-danger gx-0 App__column-row--wrapper">
-          <Header />
-          <UserBody />
-          <Scroll />
-        </div>
+    <main className="container-fluid border border-danger App gx-0">
+      <Header />
+      <UserBody />
+      <section className="row  App__column-row">
+        {/* <Header /> */}
+        {/* <div className="col-12 col-sm-12 col-md-12 col-lg-12 border border-danger gx-0 App__column-row--wrapper"> */}
+        {/* <UserBody /> */}
+        {/* <Scroll /> */}
+        {/* </div> */}
       </section>
     </main>
   );

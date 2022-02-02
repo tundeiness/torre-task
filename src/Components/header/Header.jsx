@@ -1,7 +1,6 @@
-/* eslint-disable consistent-return */
+/* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 /* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { IoSearchSharp } from 'react-icons/io5';
@@ -19,18 +18,37 @@ const Header = () => {
   };
 
   return (
-    <nav className="navbar navbar-light">
-      <div className="toggler-brand d-flex">
-        <button className="navbar-toggler" type="button">
-          <span className="navbar-toggler-icon" />
-        </button>
-        <a className="navbar-brand" href="./">
-          torre.
-          <span>co</span>
-        </a>
-      </div>
+    <nav className="navbar border border-danger">
+      {/* <div className="test w-lg-50 d-flex border border-primary">
+        <div className="toggler-brand d-flex border border-danger ms-2 py-1">
+          <button className="navbar-toggler pe-1 ps-1 ms-1 me-2" type="button">
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="border border-dark ms-2 me-3">
+            <a className="navbar-brand" href="./">
+              torre.
+              <span>co</span>
+            </a>
+          </div>
+        </div>
 
-      <div className="auth-search d-flex me-3">
+        <form
+          className="search-form d-flex"
+          onSubmit={submitHandler}
+        >
+          <input
+            type="text"
+            value={username}
+            placeholder="search"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <button type="submit" onClick={submitHandler}>
+            <IoSearchSharp className="search-form__icon me-3" />
+          </button>
+        </form>
+      </div> */}
+
+      {/* <div className="auth-search d-flex me-3">
         <form
           className="search-form d-flex flex-grow-1"
           onSubmit={submitHandler}
@@ -48,7 +66,7 @@ const Header = () => {
         <a className="signin" href="./">
           sign in
         </a>
-      </div>
+      </div> */}
       {/* <a className="navbar-brand" href="./">
         Brand
       </a>
