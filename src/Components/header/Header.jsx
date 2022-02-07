@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="fixed-nav-bar border border-danger">
+    <nav className="navigation border border-danger">
       <div className="test d-flex border border-primary">
         <div className="toggler-brand d-flex border border-danger ms-2 py-1">
           <button className="navbar-toggler pe-1 ps-1 ms-1 me-2" type="button">
