@@ -19,10 +19,13 @@ const Header = () => {
   };
 
   return (
-    <nav className="navigation border border-danger">
-      <div className="test d-flex border border-primary">
+    <nav className="navigation d-flex justify-content-between border border-danger">
+      <div className="test d-flex w-75 border border-primary">
         <div className="toggler-brand d-flex border border-danger ms-2 py-1">
-          <button className="navbar-toggler pe-1 ps-1 ms-1 me-2" type="button">
+          <button
+            className="navbar-toggler pe-1 ps-1 ms-1 me-2  border border-primary"
+            type="button"
+          >
             <span className="navbar-toggler-icon" />
           </button>
           <div className="border border-dark ms-2 me-3">
@@ -44,6 +47,11 @@ const Header = () => {
             <IoSearchSharp className="search-form__icon me-3" />
           </button>
         </form>
+      </div>
+      <div className="navigation__sign-in border border-danger d-flex flex-column align-items-center justify-content-center">
+        <a className="navigation__sign-in--signin" href="./">
+          sign in
+        </a>
       </div>
 
       {/* <div className="auth-search d-flex me-3">
