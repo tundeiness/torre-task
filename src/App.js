@@ -32,17 +32,10 @@ const App = () => {
   }, [showButton]);
 
   return (
-    <main className="container-fluid border border-danger App gx-0">
+    <>
       <Header />
       <UserBody />
-      <section className="row  App__column-row">
-        {/* <Header /> */}
-        {/* <div className="col-12 col-sm-12 col-md-12 col-lg-12 border border-danger gx-0 App__column-row--wrapper"> */}
-        {/* <UserBody /> */}
-        {/* <Scroll /> */}
-        {/* </div> */}
-      </section>
-    </main>
+    </>
   );
 };
 
