@@ -6,6 +6,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import UserBody from './Views/user';
 import Scroll from './Components/scrollTo/scrollToArrow';
 import Header from './Components/header/Header';
+import './App.scss';
 
 const App = () => {
   const [showButton, setShowButton] = useState(false);

@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { IoSearchSharp } from 'react-icons/io5';
 import { fetchPerson } from '../../features/personSlice';
-import '../../static/sass/components/_header.scss';
+// import '../../static/sass/components/_header.scss';
 
 const Header = () => {
   const [username, setUsername] = useState('');
