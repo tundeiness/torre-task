@@ -20,8 +20,8 @@ const Header = () => {
 
   return (
     <nav className="navigation d-flex justify-content-between border border-danger">
-      <div className="test d-flex w-75 border border-primary">
-        <div className="toggler-brand d-flex border border-danger ms-2 py-1">
+      <div className="navigation__brand-search d-flex justify-content-between border border-primary">
+        <div className="navigation__brand-search--toggler-brand d-flex border border-danger ms-0 ms-lg-2 py-1">
           <button
             className="navbar-toggler pe-1 ps-1 ms-1 me-2  border border-primary"
             type="button"
@@ -36,9 +36,12 @@ const Header = () => {
           </div>
         </div>
 
-        <form className="search-form d-flex" onSubmit={submitHandler}>
+        <form
+          className="navigation__brand-search--search-form d-flex border border-danger"
+          onSubmit={submitHandler}
+        >
           <input
-            type="text"
+            type="search"
             value={username}
             placeholder="search"
             onChange={(e) => setUsername(e.target.value)}

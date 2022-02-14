@@ -10,28 +10,6 @@
   //  -webkit-box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
   //  -moz-box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
 
-
-  .toggler-brand{
-    button{
-      border: none;
-    }
-
-    .navbar-brand{
-
-    }
-
-    a{
-      font-weight: 600;
-      font-size: 1.8rem;
-      span{
-        font-weight: 600;
-        text-transform: uppercase;
-        color:olive;
-        font-size: 1.4rem !important;
-      }
-    }
-  }
-
   // .auth-search{
   //   // width: 60%;
   //   .search-form{
@@ -63,6 +41,49 @@
   //     font-size: 1.2rem;
   //   }
   // }
+
+  &__brand-search{
+    width: 60%;
+    position: relative;
+
+      &--toggler-brand{
+      button{
+        border: none;
+      }
+
+      .navbar-brand{
+
+      }
+
+      a{
+        font-weight: 600;
+        font-size: 1.8rem;
+        span{
+          font-weight: 600;
+          text-transform: uppercase;
+          color:olive;
+          font-size: 1.4rem !important;
+        }
+      }
+    }
+
+
+    &--search-form{
+       // display: block;
+      // margin: 0.5rem auto;
+      // outline: 1px solid red;
+      // width: 100%;
+      // display: flex;
+      // flex-grow: 1;
+      position: absolute;
+      height: 50px;
+      width: 235px;
+      // margin-left: 170px;
+      top: 50%;
+      left: 83%;
+      transform: translate(-50%, -50%);
+    }
+  }
 
   &__sign-in{
     padding: 0 1.2rem;
@@ -100,3 +121,7 @@
 //   display: flex;
 //   line-height: 50px;
 // }
+
+@media screen {
+  
+}
