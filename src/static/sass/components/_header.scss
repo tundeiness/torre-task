@@ -153,13 +153,13 @@
 //   line-height: 50px;
 // }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:768px) {
     /* style ONLY for screens with 800px or less width */
 
     .navigation{
 
       &__brand-search{
-
+        //  width: 50%;
 
         &--toggler-brand{
           // some code
