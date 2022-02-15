@@ -75,13 +75,42 @@
       // width: 100%;
       // display: flex;
       // flex-grow: 1;
-      position: absolute;
-      height: 50px;
-      width: 235px;
-      // margin-left: 170px;
-      top: 50%;
-      left: 83%;
-      transform: translate(-50%, -50%);
+
+
+      // position: absolute;
+      // height: 50px;
+      // width: 235px;
+      // top: 50%;
+      // left: 83%;
+      // transform: translate(-50%, -50%);
+
+
+      input {
+        outline: none;
+      }
+      input[type=search]{
+        -webkit-appearance: textfield;
+        font-size: 100%;
+        // width: 80%;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        transition: all .5s ease-in-out;
+      }
+
+      input::-webkit-search-decoration,
+      input::-webkit-search-cancel-button {
+        display: none; 
+      }
+
+      input[type=search]:focus {
+        width: 30rem;
+        // transition: all .5s;
+        // background-color: #fff;
+        // border-color: #66CC75;
+        // transform: translateX(-100px);
+        transition: transform 5s ease-out; 
+        
+      }
     }
   }
 
