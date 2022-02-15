@@ -43,7 +43,7 @@
   // }
 
   &__brand-search{
-    width: 60%;
+    width: 65%;
     position: relative;
 
       &--toggler-brand{
@@ -88,6 +88,8 @@
       input {
         outline: none;
       }
+
+
       input[type=search]{
         -webkit-appearance: textfield;
         font-size: 100%;
@@ -97,10 +99,10 @@
         transition: all .5s ease-in-out;
       }
 
-      input::-webkit-search-decoration,
-      input::-webkit-search-cancel-button {
-        display: none; 
-      }
+      // input::-webkit-search-decoration,
+      // input::-webkit-search-cancel-button {
+      //   display: none; 
+      // }
 
       input[type=search]:focus {
         width: 30rem;
@@ -151,6 +153,25 @@
 //   line-height: 50px;
 // }
 
-@media screen {
-  
+@media screen and (max-width:800px) {
+    /* style ONLY for screens with 800px or less width */
+
+    .navigation{
+
+      &__brand-search{
+
+
+        &--toggler-brand{
+          // some code
+
+        }
+
+        &--search-form{
+          // some code
+           input {
+            outline: none;
+          }
+        }
+      }
+    }
 }
