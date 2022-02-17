@@ -1,3 +1,6 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 /* eslint-disable no-undef */
@@ -8,20 +11,34 @@ import { fetchPerson } from '../../features/personSlice';
 // import '../../static/sass/components/_header.scss';
 
 const Header = () => {
-  const [username, setUsername] = useState('');
+  const [keyword, setKeyword] = useState('');
+  // const [keyword, setKeyword] = useState('');
   const dispatch = useDispatch();
+
+  const options = [
+    { value: 'name', label: 'Search people by name:' },
+    { value: 'skills', label: 'Search people by skills:' },
+  ];
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (!username) return;
-    dispatch(fetchPerson(username));
-    setUsername('');
+    if (!keyword) return;
+    dispatch(fetchPerson(keyword));
+    setKeyword('');
   };
+
+  // const handleSearch = (searchType) => {
+  //   if (searchType) {
+  //     doSearch({ name, skill });
+  //   } else {
+  //     doSearch({ name });
+  //   }
+  // };
 
   return (
     <nav className="navigation d-flex justify-content-between border border-danger">
-      <div className="navigation__brand-search d-flex justify-content-between border border-primary">
-        <div className="navigation__brand-search--toggler-brand d-flex border border-danger ms-0 ms-lg-2 py-1">
+      <div className="navigation--brand-search border border-primary">
+        <div className="navigation--brand-search__toggler-brand d-flex border border-danger ms-0 ms-lg-2 py-1">
           <button
             className="navbar-toggler pe-1 ps-1 ms-1 me-2  border border-primary"
             type="button"
@@ -42,13 +59,20 @@ const Header = () => {
         >
           <input
             type="search"
-            value={username}
+            value={keyword}
             placeholder="search"
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setKeyword(e.target.value)}
           />
           <button type="submit" onClick={submitHandler}>
             <IoSearchSharp className="search-form__icon me-3" />
           </button>
+          {/* {Boolean(keyword) && (
+            <div onClick={submitHandler('name')}>
+              {keyword}
+              {' '}
+              - Search people by name:
+            </div>
+          )} */}
         </form>
       </div>
       <div className="navigation__sign-in border border-danger d-flex flex-column align-items-center justify-content-center">

@@ -42,11 +42,15 @@
   //   }
   // }
 
-  &__brand-search{
-    width: 65%;
+  &--brand-search{
+    // width: 65%;
     position: relative;
+    display: grid;
+    // grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 270px;
 
-      &--toggler-brand{
+      &__toggler-brand{
       button{
         border: none;
       }
@@ -168,10 +172,55 @@
 
         &--search-form{
           // some code
-           input {
+          // width:5%;
+          width: 70px;
+          input {
             outline: none;
+          }
+
+          input[type=search]{
+            transition: none;
+             width: 10px;
+          }
+
+          input[type=search]:focus {
+            // width: 12.1rem;
+            // transition: transform 5s ease-out; 
           }
         }
       }
     }
+}
+
+
+@media screen and (max-width:425px) {
+
+  .navigation{
+
+     &__brand-search{
+        width: 65%;
+       &--toggler-brand{
+          // some code
+
+        }
+
+
+        &--search-form{
+        // some code
+        input {
+          outline: none;
+        }
+
+        input[type=search]{
+          transition: none;
+        }
+
+        input[type=search]:focus {
+          width: 0;
+          // transition: transform 5s ease-out; 
+        }
+      }
+
+    }
+  }
 }
