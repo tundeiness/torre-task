@@ -15,7 +15,26 @@
     &__large-col{
       .brand-search{
         &--toggler-brand{
+          .navbar-toggler{
+            .navbar-toggler-icon{
 
+            }
+          }
+
+          .navbar-brand{
+
+          }
+
+          a{
+            font-weight: 600;
+            font-size: 1.6rem;
+            span{
+              font-weight: 600;
+              text-transform: uppercase;
+              color:olive;
+              font-size: 1.2rem !important;
+            }
+          }
         }
 
         &--search-form{
@@ -74,29 +93,6 @@
     // gap: 24px;
     // gap: 240px;
     // grid-template-columns: minmax(150px, 75%) 1fr;
-
-      &__toggler-brand{
-        // grid-column: 1 / 2;
-
-      button{
-        border: none;
-      }
-
-      .navbar-brand{
-
-      }
-
-      a{
-        font-weight: 600;
-        font-size: 1.8rem;
-        span{
-          font-weight: 600;
-          text-transform: uppercase;
-          color:olive;
-          font-size: 1.4rem !important;
-        }
-      }
-    }
 
   }
 
