@@ -106,8 +106,18 @@
     /* style ONLY for screens with 800px or less width */
 
     .navigation{
-
-  
+        &--row{
+          &__large-col{
+            .brand-search{
+                &--search-form{
+                  input[type=search]:focus {
+                    width: 250px;
+                    transition: transform 5s ease-out; 
+                  }
+                }
+            }
+          }
+        }
     }
 }
 
@@ -116,7 +126,22 @@
 
   .navigation{
 
-    
+    &--row{
+      &__large-col{
+        .brand-search{
+            &--search-form{
+              input[type=search]:focus {
+                // width: 250px;
+                transition: transform 5s ease-out; 
+              }
+
+              input{
+                display: none;
+              }
+            }
+        }
+      }
+    }
   }
 }
 
@@ -124,6 +149,24 @@
 
   .navigation{
 
+    &--row{
 
+      &__small-col{
+    
+        .sign-in{
+          &--signin{
+            text-decoration: none;
+            color: olive;
+            text-transform: uppercase;
+            font-weight:400;
+            padding: 0;
+          }
+
+          &--signin:hover{
+            color: olive;
+          }
+        }
+      }
+    }
   }
 }

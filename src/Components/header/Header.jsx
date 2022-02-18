@@ -38,7 +38,7 @@ const Header = () => {
   return (
     <nav className="navigation container-fluid gx-0 border border-danger">
       <div className="row d-flex justify-content-between navigation--row">
-        <div className="col-lg-7 navigation--row__large-col">
+        <div className="col-7 col-md-8 col-lg-7 navigation--row__large-col">
           <div className="brand-search d-flex justify-content-between border border-primary">
             <div className="brand-search--toggler-brand d-flex border border-danger ms-0 ms-lg-2 py-1">
               <button
@@ -79,7 +79,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="col-lg-2 d-flex justify-content-end navigation--row__small-col">
+        <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-end navigation--row__small-col">
           <div className="sign-in border border-danger d-flex flex-column align-items-center justify-content-center">
             <a className="sign-in--signin" href="./">
               sign in
