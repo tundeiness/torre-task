@@ -37,10 +37,10 @@ const Header = () => {
 
   return (
     <nav className="navigation container-fluid gx-0 border border-danger">
-      <div className="row d-flex justify-content-between">
-        <div className="col-lg-7">
-          <div className="navigation--brand-search d-flex justify-content-between border border-primary">
-            <div className="navigation--brand-search__toggler-brand d-flex border border-danger ms-0 ms-lg-2 py-1">
+      <div className="row d-flex justify-content-between navigation--row">
+        <div className="col-lg-7 navigation--row__large-col">
+          <div className="brand-search d-flex justify-content-between border border-primary">
+            <div className="brand-search--toggler-brand d-flex border border-danger ms-0 ms-lg-2 py-1">
               <button
                 className="navbar-toggler pe-1 ps-1 ms-1 me-2  border border-primary"
                 type="button"
@@ -56,7 +56,7 @@ const Header = () => {
             </div>
 
             <form
-              className="navigation__brand-search--search-form border border-danger"
+              className="brand-search--search-form d-flex border border-danger"
               onSubmit={submitHandler}
             >
               <input
@@ -78,9 +78,10 @@ const Header = () => {
             </form>
           </div>
         </div>
-        <div className="col-lg-2">
-          <div className="navigation__sign-in border border-danger d-flex flex-column align-items-center justify-content-center">
-            <a className="navigation__sign-in--signin" href="./">
+
+        <div className="col-lg-2 d-flex justify-content-end navigation--row__small-col">
+          <div className="sign-in border border-danger d-flex flex-column align-items-center justify-content-center">
+            <a className="sign-in--signin" href="./">
               sign in
             </a>
           </div>
