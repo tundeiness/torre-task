@@ -6,9 +6,9 @@
   width: 100%; 
   background-color: white;
   //  overflow: hidden;
-  //  box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
-  //  -webkit-box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
-  //  -moz-box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
+  // box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
+  // -webkit-box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
+  // -moz-box-shadow: 0px 9px 5px 0px rgba(0,0,0,0.75);
 
 
   &--row{
@@ -139,6 +139,47 @@
                 display: none;
               }
             }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:375px) {
+
+  .navigation{
+
+    &--row{
+
+      &__large-col{
+        .brand-search{
+            &--search-form{
+              input[type=search]:focus {
+                // width: 250px;
+                transition: transform 5s ease-out; 
+              }
+
+              input{
+                display: none;
+              }
+            }
+        }
+      }
+
+      &__small-col{
+    
+        .sign-in{
+          &--signin{
+            text-decoration: none;
+            color: olive;
+            text-transform: uppercase;
+            font-weight:400;
+            padding: 0;
+          }
+
+          &--signin:hover{
+            color: olive;
+          }
         }
       }
     }
