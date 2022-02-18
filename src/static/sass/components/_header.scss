@@ -45,12 +45,18 @@
   &--brand-search{
     // width: 65%;
     position: relative;
-    display: grid;
+    // display: grid;
     // grid-template-columns: auto auto;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 270px;
+    // grid-template-columns: repeat(2, 1fr);
+      // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    //  column-gap: 270px;
+    // gap: 24px;
+    // gap: 240px;
+    // grid-template-columns: minmax(150px, 75%) 1fr;
 
       &__toggler-brand{
+        // grid-column: 1 / 2;
+
       button{
         border: none;
       }
@@ -73,6 +79,7 @@
 
 
     &--search-form{
+      // grid-column: 2 / 3;
        // display: block;
       // margin: 0.5rem auto;
       // outline: 1px solid red;
@@ -91,10 +98,12 @@
 
       input {
         outline: none;
+        // grid-column: 2 / 3;
       }
 
 
       input[type=search]{
+        // grid-column: 2 / 3;
         -webkit-appearance: textfield;
         font-size: 100%;
         // width: 80%;
@@ -173,14 +182,14 @@
         &--search-form{
           // some code
           // width:5%;
-          width: 70px;
+          // width: 70px;
           input {
             outline: none;
           }
 
           input[type=search]{
             transition: none;
-             width: 10px;
+            //  width: 10px;
           }
 
           input[type=search]:focus {
@@ -198,7 +207,7 @@
   .navigation{
 
      &__brand-search{
-        width: 65%;
+        // width: 65%;
        &--toggler-brand{
           // some code
 
@@ -221,6 +230,16 @@
         }
       }
 
+    }
+  }
+}
+
+@media screen and (max-width:320px) {
+
+  .navigation{
+
+    &--brand-search{
+      // column-gap: 170px;
     }
   }
 }

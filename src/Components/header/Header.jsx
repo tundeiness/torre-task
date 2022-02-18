@@ -36,51 +36,56 @@ const Header = () => {
   // };
 
   return (
-    <nav className="navigation d-flex justify-content-between border border-danger">
-      <div className="navigation--brand-search border border-primary">
-        <div className="navigation--brand-search__toggler-brand d-flex border border-danger ms-0 ms-lg-2 py-1">
-          <button
-            className="navbar-toggler pe-1 ps-1 ms-1 me-2  border border-primary"
-            type="button"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="border border-dark ms-2 me-3">
-            <a className="navbar-brand" href="./">
-              torre.
-              <span>co</span>
-            </a>
-          </div>
-        </div>
+    <nav className="navigation container-fluid gx-0 border border-danger">
+      <div className="row d-flex justify-content-between">
+        <div className="col-lg-7">
+          <div className="navigation--brand-search d-flex justify-content-between border border-primary">
+            <div className="navigation--brand-search__toggler-brand d-flex border border-danger ms-0 ms-lg-2 py-1">
+              <button
+                className="navbar-toggler pe-1 ps-1 ms-1 me-2  border border-primary"
+                type="button"
+              >
+                <span className="navbar-toggler-icon" />
+              </button>
+              <div className="border border-dark ms-2 me-3">
+                <a className="navbar-brand" href="./">
+                  torre.
+                  <span>co</span>
+                </a>
+              </div>
+            </div>
 
-        <form
-          className="navigation__brand-search--search-form d-flex border border-danger"
-          onSubmit={submitHandler}
-        >
-          <input
-            type="search"
-            value={keyword}
-            placeholder="search"
-            onChange={(e) => setKeyword(e.target.value)}
-          />
-          <button type="submit" onClick={submitHandler}>
-            <IoSearchSharp className="search-form__icon me-3" />
-          </button>
-          {/* {Boolean(keyword) && (
+            <form
+              className="navigation__brand-search--search-form border border-danger"
+              onSubmit={submitHandler}
+            >
+              <input
+                type="search"
+                value={keyword}
+                placeholder="search"
+                onChange={(e) => setKeyword(e.target.value)}
+              />
+              <button type="submit" onClick={submitHandler}>
+                <IoSearchSharp className="search-form__icon me-3" />
+              </button>
+              {/* {Boolean(keyword) && (
             <div onClick={submitHandler('name')}>
               {keyword}
               {' '}
               - Search people by name:
             </div>
           )} */}
-        </form>
+            </form>
+          </div>
+        </div>
+        <div className="col-lg-2">
+          <div className="navigation__sign-in border border-danger d-flex flex-column align-items-center justify-content-center">
+            <a className="navigation__sign-in--signin" href="./">
+              sign in
+            </a>
+          </div>
+        </div>
       </div>
-      <div className="navigation__sign-in border border-danger d-flex flex-column align-items-center justify-content-center">
-        <a className="navigation__sign-in--signin" href="./">
-          sign in
-        </a>
-      </div>
-
       {/* <div className="auth-search d-flex me-3">
         <form
           className="search-form d-flex flex-grow-1"
