@@ -12,7 +12,7 @@ import { fetchPerson } from '../../features/personSlice';
 
 const Header = () => {
   const [keyword, setKeyword] = useState('');
-  // const [keyword, setKeyword] = useState('');
+  const [toggleMenu, setToggleMenu] = useState(false);
   const dispatch = useDispatch();
 
   const options = [
