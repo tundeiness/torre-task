@@ -7,6 +7,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { IoSearchSharp } from 'react-icons/io5';
+import { AiOutlineClose } from 'react-icons/ai';
+import { HiMenuAlt4 } from 'react-icons/hi';
 import { fetchPerson } from '../../features/personSlice';
 // import '../../static/sass/components/_header.scss';
 
@@ -41,11 +43,21 @@ const Header = () => {
         <div className="col-7 col-md-8 col-lg-7 navigation--row__large-col">
           <div className="brand-search d-flex justify-content-between border border-primary">
             <div className="brand-search--toggler-brand d-flex border border-danger ms-0 ms-lg-2 py-1">
-              <button
+              {/* <button
                 className="navbar-toggler pe-1 ps-1 ms-1 me-2  border border-primary"
                 type="button"
               >
                 <span className="navbar-toggler-icon" />
+              </button> */}
+              <button
+                className="navbar-toggler pe-1 ps-1 ms-1 me-2  border border-primary"
+                type="button"
+              >
+                {toggleMenu ? (
+                  <AiOutlineClose onClick={() => setToggleMenu(false)} />
+                ) : (
+                  <HiMenuAlt4 onClick={() => setToggleMenu(true)} />
+                )}
               </button>
               <div className="border border-dark ms-2 me-3">
                 <a className="navbar-brand" href="./">
