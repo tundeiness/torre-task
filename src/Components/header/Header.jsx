@@ -7,7 +7,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { IoSearchSharp } from 'react-icons/io5';
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { fetchPerson } from '../../features/personSlice';
 // import '../../static/sass/components/_header.scss';
@@ -56,7 +56,7 @@ const Header = () => {
                 {toggleMenu ? (
                   <AiOutlineClose onClick={() => setToggleMenu(false)} />
                 ) : (
-                  <HiMenuAlt4 onClick={() => setToggleMenu(true)} />
+                  <AiOutlineMenu onClick={() => setToggleMenu(true)} />
                 )}
               </button>
               <div className="border border-dark ms-2 me-3">
