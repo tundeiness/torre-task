@@ -10,6 +10,7 @@ import { IoSearchSharp } from 'react-icons/io5';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { fetchPerson } from '../../features/personSlice';
+import Sidebar from '../sidebar';
 // import '../../static/sass/components/_header.scss';
 
 const Header = () => {
@@ -50,13 +51,19 @@ const Header = () => {
                 <span className="navbar-toggler-icon" />
               </button> */}
               <button
-                className="navbar-toggler pe-1 ps-1 ms-1 me-2  border border-primary"
+                className="navbar-toggler pe-1 ps-1 ms-1 me-2"
                 type="button"
               >
                 {toggleMenu ? (
-                  <AiOutlineClose onClick={() => setToggleMenu(false)} />
+                  <AiOutlineClose
+                    className="close"
+                    onClick={() => setToggleMenu(false)}
+                  />
                 ) : (
-                  <AiOutlineMenu onClick={() => setToggleMenu(true)} />
+                  <AiOutlineMenu
+                    className="open"
+                    onClick={() => setToggleMenu(true)}
+                  />
                 )}
               </button>
               <div className="border border-dark ms-2 me-3">
@@ -99,6 +106,18 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {toggleMenu && (
+        <ul className="d-flex flex-column border border-danger sidebar">
+          <button type="button">
+            <AiOutlineClose
+              className="close"
+              onClick={() => setToggleMenu(false)}
+            />
+          </button>
+          <li>new</li>
+          <li>Task</li>
+        </ul>
+      )}
       {/* <div className="auth-search d-flex me-3">
         <form
           className="search-form d-flex flex-grow-1"

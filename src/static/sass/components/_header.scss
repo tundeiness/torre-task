@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999; 
+  z-index: 99; 
   width: 100%; 
   background-color: white;
   //  overflow: hidden;
@@ -15,10 +15,24 @@
     &__large-col{
       .brand-search{
         &--toggler-brand{
+  
           .navbar-toggler{
+            border: none;
+            outline: transparent;
+
+            .open, .close {
+              font-size: 1.4em;
+              outline: none;
+            }
+
             .navbar-toggler-icon{
 
             }
+          }
+
+          .navbar-toggler:focus{
+            border: none;
+            outline: none;
           }
 
           .navbar-brand{
@@ -79,6 +93,14 @@
         }
       }
     }
+  }
+
+  .sidebar {
+    z-index: 10000;
+    position: fixed;
+    height: 100vh;
+    top:0;
+    width: 25%;
   }
 
 
