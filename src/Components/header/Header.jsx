@@ -107,17 +107,14 @@ const Header = () => {
         </div>
       </div>
       {toggleMenu && (
-        <ul className="d-flex flex-column border border-danger sidebar">
-          <button type="button">
-            <AiOutlineClose
-              className="close"
-              onClick={() => setToggleMenu(false)}
-            />
-          </button>
-          <li>new</li>
-          <li>Task</li>
-        </ul>
-        // <Sidebar toggle={setToggleMenu(false)} />
+        // <ul className="d-flex flex-column border border-danger sidebar">
+        //   <button type="button" onClick={() => setToggleMenu(false)} toggl={toggleMenu}>
+        //     <AiOutlineClose className="close" />
+        //   </button>
+        //   <li>new</li>
+        //   <li>Task</li>
+        // </ul>
+        <Sidebar onClick={() => setToggleMenu(false)} />
       )}
       {/* <div className="auth-search d-flex me-3">
         <form
