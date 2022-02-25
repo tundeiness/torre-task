@@ -13,10 +13,10 @@ const sidebar = ({ onClick }) => {
         <button type="button" onClick={onClick}>
           <AiOutlineClose className="close" />
         </button>
-        <li>new</li>
-        <li>Task</li>
+        {['Market', 'Exchange', 'Rollon', 'Rolloff'].map((itms, indx) => (
+          <Item key={itms.id} title={itms} />
+        ))}
       </ul>
-      <Item />
     </>
   );
 };
