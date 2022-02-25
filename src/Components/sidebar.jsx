@@ -13,9 +13,26 @@ const sidebar = ({ onClick }) => {
         <button type="button" onClick={onClick}>
           <AiOutlineClose className="close" />
         </button>
-        {['Market', 'Exchange', 'Rollon', 'Rolloff'].map((itms, indx) => (
+        {[
+          'Search',
+          'jobs/gigs',
+          'Post a job',
+          'Your jobs(posted or applied)',
+          'Preferences',
+          'Your genome',
+          'Signals',
+        ].map((itms, indx) => (
           <Item key={itms.id} title={itms} />
         ))}
+        <hr />
+        {[
+          'Messages',
+          'Torres Product roadmap',
+          'Request features',
+        ].map((itms, indx) => (
+          <Item key={itms.id} title={itms} />
+        ))}
+        <hr />
       </ul>
     </>
   );
