@@ -51,7 +51,7 @@
           }
         }
 
-        &--search-form{
+        &__search-form{
 
           input {
             outline: none;
@@ -72,7 +72,16 @@
             width: 30rem;
             transition: transform 5s ease-out; 
           }
+
+          &--button{
+
+            .icon{
+              font-size: 1.5rem;
+            }
+          }
         }
+
+
       }
 
     }

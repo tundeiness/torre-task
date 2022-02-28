@@ -51,7 +51,7 @@ const Header = () => {
                   />
                 )}
               </button>
-              <div className=" ms-2 me-3">
+              <div className="brand-search--toggler-brand__brand-wrapper ms-2 me-3">
                 <a className="navbar-brand" href="./">
                   torre.
                   <span>co</span>
@@ -60,7 +60,7 @@ const Header = () => {
             </div>
 
             <form
-              className="brand-search--search-form d-flex border border-danger"
+              className="brand-search__search-form d-flex border border-danger"
               onSubmit={submitHandler}
             >
               <input
