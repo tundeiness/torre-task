@@ -8,7 +8,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { IoSearchSharp } from 'react-icons/io5';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { HiMenuAlt4 } from 'react-icons/hi';
 import { fetchPerson } from '../../features/personSlice';
 import Sidebar from '../sidebar';
 
