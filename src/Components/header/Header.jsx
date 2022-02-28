@@ -33,7 +33,7 @@ const Header = () => {
     <nav className="navigation container-fluid gx-0 border border-danger py-1">
       <div className="row d-flex justify-content-between navigation--row">
         <div className="col-7 col-md-8 col-lg-7 navigation--row__large-col">
-          <div className="brand-search d-flex justify-content-between border border-primary">
+          <div className="brand-search d-flex justify-content-between">
             <div className="brand-search--toggler-brand d-flex ms-0 ms-lg-2 py-1">
               <button
                 className="navbar-toggler pe-1 ps-1 ms-1 me-2"
@@ -82,7 +82,7 @@ const Header = () => {
         </div>
 
         <div className="col-4 col-md-4 col-lg-2 d-flex justify-content-end navigation--row__small-col">
-          <div className="sign-in border border-danger d-flex flex-column align-items-center justify-content-center">
+          <div className="sign-in d-flex flex-column align-items-center justify-content-center">
             <a className="sign-in--signin" href="./">
               sign in
             </a>
