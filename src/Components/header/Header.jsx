@@ -30,11 +30,11 @@ const Header = () => {
   };
 
   return (
-    <nav className="navigation container-fluid gx-0 border border-danger">
+    <nav className="navigation container-fluid gx-0 border border-danger py-1">
       <div className="row d-flex justify-content-between navigation--row">
         <div className="col-7 col-md-8 col-lg-7 navigation--row__large-col">
           <div className="brand-search d-flex justify-content-between border border-primary">
-            <div className="brand-search--toggler-brand d-flex border border-danger ms-0 ms-lg-2 py-1">
+            <div className="brand-search--toggler-brand d-flex ms-0 ms-lg-2 py-1">
               <button
                 className="navbar-toggler pe-1 ps-1 ms-1 me-2"
                 type="button"
@@ -51,7 +51,7 @@ const Header = () => {
                   />
                 )}
               </button>
-              <div className="border border-dark ms-2 me-3">
+              <div className=" ms-2 me-3">
                 <a className="navbar-brand" href="./">
                   torre.
                   <span>co</span>
@@ -68,9 +68,14 @@ const Header = () => {
                 value={keyword}
                 placeholder="search"
                 onChange={(e) => setKeyword(e.target.value)}
+                className="brand-search__search-form--input"
               />
-              <button type="submit" onClick={submitHandler}>
-                <IoSearchSharp className="search-form__icon me-3" />
+              <button
+                type="submit"
+                onClick={submitHandler}
+                className="brand-search__search-form--button"
+              >
+                <IoSearchSharp className="icon" />
               </button>
             </form>
           </div>
@@ -84,9 +89,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {toggleMenu && (
-        <Sidebar onClick={() => setToggleMenu(false)} />
-      )}
+      {toggleMenu && <Sidebar onClick={() => setToggleMenu(false)} />}
     </nav>
   );
 };
