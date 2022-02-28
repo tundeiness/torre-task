@@ -1,9 +1,4 @@
-/* eslint-disable no-restricted-globals */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-unused-vars */
-/* eslint-disable max-len */
-/* eslint-disable no-undef */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { IoSearchSharp } from 'react-icons/io5';
