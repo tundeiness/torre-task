@@ -60,7 +60,7 @@ const Header = () => {
             </div>
 
             <form
-              className="brand-search__search-form d-flex border border-danger"
+              className="brand-search__search-form d-flex"
               onSubmit={submitHandler}
             >
               <input
@@ -73,7 +73,7 @@ const Header = () => {
               <button
                 type="submit"
                 onClick={submitHandler}
-                className="brand-search__search-form--button"
+                className="brand-search__search-form--button px-3"
               >
                 <IoSearchSharp className="icon" />
               </button>
