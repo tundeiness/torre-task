@@ -10,9 +10,15 @@ const sidebar = ({ onClick }) => {
   return (
     <>
       <ul className="d-flex flex-column border border-danger sidebar">
-        <button type="button" onClick={onClick}>
-          <AiOutlineClose className="close" />
-        </button>
+        <li className="sidebar__wrapper">
+          <button
+            type="button"
+            onClick={onClick}
+            className="sidebar__wrapper--button"
+          >
+            <AiOutlineClose className="close" />
+          </button>
+        </li>
         {[
           'Search',
           'jobs/gigs',
@@ -25,13 +31,11 @@ const sidebar = ({ onClick }) => {
           <Item key={itms.id} title={itms} />
         ))}
         <hr />
-        {[
-          'Messages',
-          'Torres Product roadmap',
-          'Request features',
-        ].map((itms, indx) => (
-          <Item key={itms.id} title={itms} />
-        ))}
+        {['Messages', 'Torres Product roadmap', 'Request features'].map(
+          (itms, indx) => (
+            <Item key={itms.id} title={itms} />
+          ),
+        )}
         <hr />
       </ul>
     </>
