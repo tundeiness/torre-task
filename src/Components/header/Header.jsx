@@ -24,8 +24,8 @@ const Header = () => {
   };
 
   return (
-    <nav className="navigation container-fluid gx-0 border border-danger py-1">
-      <div className="row d-flex justify-content-between navigation--row">
+    <nav className="navigation container-fluid gx-0 py-2">
+      <div className="row d-flex justify-content-between navigation--row py-1">
         <div className="col-7 col-md-8 col-lg-7 navigation--row__large-col">
           <div className="brand-search d-flex justify-content-between">
             <div className="brand-search--toggler-brand d-flex ms-0 ms-lg-2 py-1">
@@ -54,20 +54,20 @@ const Header = () => {
             </div>
 
             <form
-              className="brand-search__search-form d-flex"
+              className="brand-search__search-form d-flex "
               onSubmit={submitHandler}
             >
               <input
                 type="search"
                 value={keyword}
-                placeholder="search"
+                placeholder="Search"
                 onChange={(e) => setKeyword(e.target.value)}
                 className="brand-search__search-form--input"
               />
               <button
                 type="submit"
                 onClick={submitHandler}
-                className="brand-search__search-form--button px-3"
+                className="brand-search__search-form--button px-2 my-1"
               >
                 <IoSearchSharp className="icon" />
               </button>
