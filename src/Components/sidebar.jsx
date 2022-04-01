@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
 import Item from './sidebarItem';
 
-const sidebar = ({ onClick }) => {
+const sidebar = () => {
   const unlow = 0;
   // const [toggleMenu, setToggleMenu] = useState(toggl);
   // console.log(toggl);
@@ -11,13 +10,6 @@ const sidebar = ({ onClick }) => {
     <>
       <ul className="d-flex flex-column border border-danger sidebar">
         <li className="sidebar__brand-wrapper">
-          {/* <button
-            type="button"
-            onClick={onClick}
-            className="sidebar__wrapper--button"
-          >
-            <AiOutlineClose className="close" />
-          </button> */}
           <a className="sidebar-brand" href="./">
             torre
           </a>

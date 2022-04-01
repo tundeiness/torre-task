@@ -4,7 +4,7 @@ import React from 'react';
 const sidebarItem = ({ title, classProps }) => {
   const check = 'here';
   return (
-    <li className={`d-flex  flex-column ${classProps}`}>{title}</li>
+    <li className={`d-flex  flex-column ${classProps} list-links`}>{title}</li>
   );
 };
 
