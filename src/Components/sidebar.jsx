@@ -10,14 +10,17 @@ const sidebar = ({ onClick }) => {
   return (
     <>
       <ul className="d-flex flex-column border border-danger sidebar">
-        <li className="sidebar__wrapper">
-          <button
+        <li className="sidebar__brand-wrapper">
+          {/* <button
             type="button"
             onClick={onClick}
             className="sidebar__wrapper--button"
           >
             <AiOutlineClose className="close" />
-          </button>
+          </button> */}
+          <a className="sidebar-brand" href="./">
+            torre
+          </a>
         </li>
         {[
           'Search',
