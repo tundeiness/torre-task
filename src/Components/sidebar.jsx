@@ -27,12 +27,12 @@ const sidebar = ({ onClick }) => {
           'Preferences',
           'Your genome',
           'Signals',
-        ].map((itms, indx) => (
+        ].map((itms, _indx) => (
           <Item key={itms.id} title={itms} />
         ))}
         <hr />
         {['Messages', 'Torres Product roadmap', 'Request features'].map(
-          (itms, indx) => (
+          (itms, _indx) => (
             <Item key={itms.id} title={itms} />
           ),
         )}

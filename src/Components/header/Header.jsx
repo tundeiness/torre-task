@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { IoSearchSharp } from 'react-icons/io5';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
@@ -7,6 +7,7 @@ import { fetchPerson } from '../../features/personSlice';
 import Sidebar from '../sidebar';
 
 const Header = () => {
+  const ref = useRef();
   const [keyword, setKeyword] = useState('');
   const [toggleMenu, setToggleMenu] = useState(false);
   const dispatch = useDispatch();
@@ -23,8 +24,21 @@ const Header = () => {
     setKeyword('');
   };
 
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (toggleMenu && ref.current && !ref.current.contains(e.target)) {
+        setToggleMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', checkIfClickedOutside);
+    };
+  }, [toggleMenu]);
   return (
-    <nav className="navigation container-fluid gx-0 py-2">
+    <nav className="navigation container-fluid gx-0 py-2" ref={ref}>
       <div className="row d-flex justify-content-between navigation--row py-1">
         <div className="col-7 col-md-8 col-lg-7 navigation--row__large-col">
           <div className="brand-search d-flex justify-content-between">
