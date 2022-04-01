@@ -1,5 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import { BsSearch } from 'react-icons/bs';
+import {
+  IoCompassOutline,
+  IoMegaphoneOutline,
+  IoMdBriefcase,
+} from 'react-icons/io';
+
+import { GoSettings } from 'react-icons/go';
+import { TiMessages } from 'react-icons/ti';
+import { GiRoad } from 'react-icons/gi';
+import { AiOutlineBulb } from 'react-icons/ai';
+import { BiCode, BiHelpCircle } from 'react-icons/bi';
+import { GrLanguage } from 'react-icons/gr';
 import Item from './sidebarItem';
 
 const sidebar = () => {
